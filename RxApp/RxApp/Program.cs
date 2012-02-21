@@ -20,8 +20,7 @@ namespace RxApp
 
             Observable.When(plan1, plan2, plan3)
                 .Subscribe(t =>
-                    Console.WriteLine("{0} {1} {2} {3}", t.Item1, t.Item2, t.Item3, t.Item4),
-                    () => Console.WriteLine("OnCompleted"));
+                    Console.WriteLine("{0} {1} {2} {3}", t.Item1, t.Item2, t.Item3, t.Item4));
 
             s.OnNext(100);
             s.OnNext(1);
