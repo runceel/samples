@@ -3,23 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-HelloWorld", "01-HelloWorld", "{E9B65D7A-E931-4569-9484-56DF4BE1A2F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntLib5Samples.HelloWorld01", "EntLib5Samples.HelloWorld01\EntLib5Samples.HelloWorld01.csproj", "{CAC2C614-8962-459C-AAA5-2590FD5CBE65}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{AAAB88B7-DF16-4578-B894-F783E058AE07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CAC2C614-8962-459C-AAA5-2590FD5CBE65}.Debug|x86.ActiveCfg = Debug|x86
-		{CAC2C614-8962-459C-AAA5-2590FD5CBE65}.Debug|x86.Build.0 = Debug|x86
-		{CAC2C614-8962-459C-AAA5-2590FD5CBE65}.Release|x86.ActiveCfg = Release|x86
-		{CAC2C614-8962-459C-AAA5-2590FD5CBE65}.Release|x86.Build.0 = Release|x86
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{CAC2C614-8962-459C-AAA5-2590FD5CBE65} = {E9B65D7A-E931-4569-9484-56DF4BE1A2F6}
 	EndGlobalSection
 EndGlobal
