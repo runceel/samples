@@ -5,12 +5,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-HelloWorld", "01-HelloWo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{AAAB88B7-DF16-4578-B894-F783E058AE07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.HelloWorld", "01-HelloWorld\HelloWorld\01.HelloWorld.csproj", "{60F7818E-F68A-4FCB-A71F-D06949F47787}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{49A0B632-4284-461C-A06B-4837181ACA81}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60F7818E-F68A-4FCB-A71F-D06949F47787}.Debug|x86.ActiveCfg = Debug|x86
+		{60F7818E-F68A-4FCB-A71F-D06949F47787}.Debug|x86.Build.0 = Debug|x86
+		{60F7818E-F68A-4FCB-A71F-D06949F47787}.Release|x86.ActiveCfg = Release|x86
+		{60F7818E-F68A-4FCB-A71F-D06949F47787}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60F7818E-F68A-4FCB-A71F-D06949F47787} = {E9B65D7A-E931-4569-9484-56DF4BE1A2F6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35
 	EndGlobalSection
 EndGlobal
