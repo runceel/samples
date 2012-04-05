@@ -1,45 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Diagnostics;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 
 namespace HelloWorld
 {
-    class MyTraceListener : CustomTraceListener
-    {
-        public override void Write(string message)
-        {
-            Console.Write(message);
-        }
-
-        public override void WriteLine(string message)
-        {
-            Console.WriteLine(message);
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
+            // 構成情報を組み立てる
             var builder = new ConfigurationSourceBuilder();
             builder.ConfigureLogging()
-                .WithOptions.DoNotRevertImpersonation()
-                .LogToCategoryNamed("HelloWorldCategory")
-                    .SendTo.Custom<MyTraceListener>("sample")
-                    .FormatWith(new FormatterBuilder().TextFormatterNamed("Text Formatter").UsingTemplate(
-                        "Message: {message}{newline}Category: {category}{newline}Priority: {priority}{newline}"));
+                .SpecialSources
+                .AllEventsCategory
+                    .SendTo
+                    .FlatFile("FlatFileListener")
+                    .FormatWith(
+                        new FormatterBuilder()
+                            .TextFormatterNamed("TextFormatter")
+                            .UsingTemplate("{timestamp(local:yyyy/MM/dd HH:mm:ss.fff)}: {message}"))
+                    .ToFile("output.txt");
 
+            // 組み立てた構成情報からConfigurationSourceを作成
             var config = new DictionaryConfigurationSource();
             builder.UpdateConfigurationWithReplace(config);
 
+            // 構成情報を元にEnterpriseLibraryのコンテナの初期化
             EnterpriseLibraryContainer.Current = EnterpriseLibraryContainer.CreateDefaultContainer(config);
 
+            // EnterpriseLibraryのコンテナからLogging Application BlockのLog書き込み部品を取得
             var logger = EnterpriseLibraryContainer.Current.GetInstance<LogWriter>();
-            logger.Write("Hello world", "HelloWorldCategory", 2, 9999);
+            // ログに出力する
+            logger.Write("Hello world");
+
+            // ログを表示
+            Process.Start("output.txt");
         }
     }
 }
