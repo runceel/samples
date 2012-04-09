@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-HelloWorld", "01-HelloWorld", "{E9B65D7A-E931-4569-9484-56DF4BE1A2F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{AAAB88B7-DF16-4578-B894-F783E058AE07}"
-	ProjectSection(SolutionItems) = preProject
-		Docs\Enterprise Library 5.1入門.docx = Docs\Enterprise Library 5.1入門.docx
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.HelloWorld", "01-HelloWorld\HelloWorld\01.HelloWorld.csproj", "{60F7818E-F68A-4FCB-A71F-D06949F47787}"
 EndProject
