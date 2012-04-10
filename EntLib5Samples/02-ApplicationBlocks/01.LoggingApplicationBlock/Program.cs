@@ -13,6 +13,7 @@
         {
             var builder = new ConfigurationSourceBuilder();
             builder.ConfigureLogging()
+                .WithOptions.FilterOnPriority("aaa").UpToPriority(10)
                 // 名前を付けてログの定義を開始
                 .LogToCategoryNamed("General")
                     // WithOptionsで追加オプション
