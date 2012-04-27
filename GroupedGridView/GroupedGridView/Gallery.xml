@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../buildx/script2/preview.xslt"?>
+<gallery_sample xmlns="http://microsoft.com/wdcml"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://microsoft.com/wdcml http://gezora/buildx/schema/xsd/wdcml.xsd">
+  <metadata id="gallery_sample.GroupedGridView" publish_to_gallery="true"
+            type="gallery_sample" msdnID="642de9ee-fdb0-4f6b-8eaf-605acaa58aae">
+    <title>GroupedGridView</title>
+    <!-- Add a devlang for each programming language in all versions of the sample.  -->
+    <devlang value="csharp"/>
+
+    <!-- Do not change tech value --> 
+    <tech value="gallery_samples"/> 
+    <index />
+    <sample_langs>
+      <!-- Describes the languages to which the sample code itself
+              has been localized. -->
+      <sample_lang xml:lang="en-us"></sample_lang>
+    </sample_langs>
+  </metadata>
+  <content>
+    <desc>
+      <p>
+        <!-- Describe the purpose of the sample and APIs/functionality being demonstrated -->
+        <abstract>This sample demonstrates how to use grouping with the GridView control.</abstract>
+      </p>
+      <p>Specifically, this sample covers:<list><item>Creating a grouped GridView</item><item>Working with group headers</item><item>Enabling simple semantic zoom</item></list></p>
+<!--The text below is boilerplate used to pad the sample description in order to ensure it clears the 1000 character requirement for upload. Please do not delete it.--><p>The Windows Developer Preview Samples Gallery contains a variety of code samples that exercise the various new programming models, platforms, features, and components available for the BUILD conference. These downloadable samples are provided as compressed ZIP files that contain a Visual Studio Express (BUILD release) solution (SLN) file for the sample, along with the code pages, assets, and metadata necessary to successfully compile and run the sample. For more information on the programming models, platforms, languages and APIs demonstrated in this sample, please refer to the guidance, tutorials and reference provided in the Windows Developer Preview documentation available in the BUILD-specific version of the Windows Developer Center. This sample is not the final shipping version of the sample, and is provided �as-is� in order to indicate or demonstrate the early functionality of the programming models and feature APIs for a forthcoming version of Windows. Please provide feedback on  this sample!</p>
+    </desc>
+    <outline />
+    <screenshot>
+      <img src="" />
+    </screenshot>
+    <icon>
+      <img src="" />
+    </icon>
+    <license_info>
+      <!-- Uses the default license. This should work for most samples. -->
+      <default_license />
+    </license_info>
+    <programming_models>
+      <programming_model value="winRT" />
+    </programming_models>
+    <application_frameworks>
+      <application_framework value="jupiter" />
+    </application_frameworks>
+    <related_techs>
+      <related_tech>
+        <xref rid="direct2d.about">Direct2D</xref>
+      </related_tech>
+    </related_techs>
+    <os_requirements>
+      <min_os>
+        <client name="win8"/>
+        <server name="w8srv"/>
+      </min_os>
+    </os_requirements>
+    <required_sdks>
+      <min_sdk>
+      </min_sdk>
+    </required_sdks>
+    <supported_ides>
+      <supported_ide>
+        <tla rid="tla_visualstu2011" />
+      </supported_ide>
+    </supported_ides>
+    <build_info>
+      <authored_instructions>
+        <section>
+          <!-- Include any special instructions for compiling your sample -->
+          <sectioncontents></sectioncontents>
+        </section>
+      </authored_instructions>
+    </build_info>
+    <run_info>
+      <authored_instructions>
+        <section>
+          <!-- Include any special instructions for running your sample -->
+          <!-- For example: commands keystrokes -->
+          <sectioncontents></sectioncontents>
+        </section>
+      </authored_instructions>
+    </run_info>
+    <seealso />
+  </content>
+  <!-- List the component compcentral path-->
+  <!-- For example:  Windows 8\DEVX-Developer Experience\REX-Runtime Experience\Windows SDK -->
+  <feature_team_info comp_central_path="\DEVX-Developer Experience\XAML\UIFramework - Controls\" dev_owner="hamidm" writer_owner="karler" />
+  <workflow_control_host/>
+</gallery_sample>
