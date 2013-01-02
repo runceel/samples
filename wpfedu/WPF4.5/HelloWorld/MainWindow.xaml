@@ -4,6 +4,5 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button x:Name="helloWorldButton" Content="Hello world" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="helloWorldButton_Click"/>
-
     </Grid>
 </Window>
