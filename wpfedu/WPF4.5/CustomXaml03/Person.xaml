@@ -1,0 +1,8 @@
+﻿<p:Person xmlns:p="clr-namespace:CustomXaml;assembly=CustomXaml">
+    <p:Person.FullName>
+        田中　太郎
+    </p:Person.FullName>
+    <p:Person.Salary>
+        300000
+    </p:Person.Salary>
+</p:Person>

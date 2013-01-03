@@ -1,0 +1,10 @@
+﻿<Item xmlns="clr-namespace:CollectionXaml;assembly=CollectionXaml"
+      Id="item1">
+    <Item.Children>
+        <!--<ItemCollection>-->
+            <Item Id="item1-1" />
+            <Item Id="item1-2" />
+            <Item Id="item1-3" />
+        <!--</ItemCollection>-->
+    </Item.Children>
+</Item>

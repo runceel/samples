@@ -1,0 +1,11 @@
+﻿<p:Person xmlns:p="clr-namespace:CustomXaml;assembly=CustomXaml" 
+          FullName="田中 太郎" 
+          Salary="300000">
+    <!-- オブジェクト要素の構文でプロパティにオブジェクトを設定している例 -->
+    <p:Person.Father>
+        <p:Person FullName="田中 父" />
+    </p:Person.Father>
+    <p:Person.Mother>
+        <p:Person FullName="田中 母" />
+    </p:Person.Mother>
+</p:Person>

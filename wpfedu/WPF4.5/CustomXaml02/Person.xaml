@@ -1,0 +1,3 @@
+﻿<p:Person xmlns:p="clr-namespace:CustomXaml;assembly=CustomXaml" 
+    FullName="田中　太郎"
+    Salary="300000"/>
