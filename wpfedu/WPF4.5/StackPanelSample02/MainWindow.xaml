@@ -1,0 +1,24 @@
+﻿<Window x:Class="StackPanelSample02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel Orientation="Horizontal">
+        <Button Content="Button" />
+        <!-- 上寄せ -->
+        <Button Content="Button" VerticalAlignment="Top" />
+        <!-- 下寄せ -->
+        <Button Content="Button" VerticalAlignment="Bottom"/>
+        <!-- 中央寄せ -->
+        <Button Content="Button" VerticalAlignment="Center"/>
+        <Button Content="Button" />
+        <!-- ボタンの周囲に余白を作る -->
+        <Button Content="Button" Margin="5" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+    </StackPanel>
+</Window>

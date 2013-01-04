@@ -1,0 +1,11 @@
+﻿<Window x:Class="BulletDecoratorSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <BulletDecorator Background="Cyan">
+        <BulletDecorator.Bullet>
+            <TextBlock Text="行頭" Foreground="White" Background="Black" />
+        </BulletDecorator.Bullet>
+        <TextBlock Text="子要素" Foreground="White" Background="Red" />
+    </BulletDecorator>
+</Window>

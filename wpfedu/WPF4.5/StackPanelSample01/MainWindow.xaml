@@ -1,0 +1,28 @@
+﻿<Window x:Class="StackPanelSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Content="Button" />
+        <!-- 左寄せ -->
+        <Button Content="Button" HorizontalAlignment="Left" />
+        <!-- 右寄せ -->
+        <Button Content="Button" HorizontalAlignment="Right" />
+        <!-- センタリング -->
+        <Button Content="Button" HorizontalAlignment="Center" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+    </StackPanel>
+</Window>
