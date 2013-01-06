@@ -1,0 +1,19 @@
+﻿<Window x:Class="ViewBoxSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <WrapPanel>
+        <Viewbox Width="75" Height="75" Stretch="None">
+            <Button Content="Button" />
+        </Viewbox>
+        <Viewbox Width="75" Height="75" Stretch="Fill">
+            <Button Content="Button" />
+        </Viewbox>
+        <Viewbox Width="75" Height="75" Stretch="Uniform">
+            <Button Content="Button" />
+        </Viewbox>
+        <Viewbox Width="75" Height="75" Stretch="UniformToFill">
+            <Button Content="Button" />
+        </Viewbox>
+    </WrapPanel>
+</Window>

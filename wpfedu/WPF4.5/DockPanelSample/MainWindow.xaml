@@ -1,0 +1,16 @@
+﻿<Window x:Class="DockPanelSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <!-- メニューやツールバー -->
+        <Button DockPanel.Dock="Top" Content="Menu" />
+        <Button DockPanel.Dock="Top" Content="Toolbar" />
+        <!-- ステータスバー -->
+        <Button DockPanel.Dock="Bottom" Content="StatusBar" />
+        <!-- ツリーが表示される場所 最低限の幅確保のためMinWidthプロパティを指定 -->
+        <Button DockPanel.Dock="Left" Content="Tree" MinWidth="150" />
+        <!-- エクスプローラーの右側の領域 -->
+        <Button Content="Content" />
+    </DockPanel>
+</Window>
