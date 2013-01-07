@@ -4,16 +4,23 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <!-- 1行1列目に配置 -->
-        <Button Content="Button" Grid.Row="1" Grid.Column="1" />
+        <!-- メニューやツールバー -->
+        <Button Grid.Row="0" Grid.ColumnSpan="2" Content="Menu" />
+        <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Toolbar" />
+        <!-- ステータスバー -->
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Content="StatusBar" />
+        <!-- ツリーが表示される場所 最低限の幅確保のためMinWidthプロパティを指定 -->
+        <Button Grid.Row="2" Content="Tree" MinWidth="150" />
+        <!-- エクスプローラーの右側の領域 -->
+        <Button Grid.Row="2" Grid.Column="1" Content="Content" />
     </Grid>
 </Window>
