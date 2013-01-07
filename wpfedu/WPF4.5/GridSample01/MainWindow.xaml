@@ -10,7 +10,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="150" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <!-- メニューやツールバー -->
@@ -19,8 +19,13 @@
         <!-- ステータスバー -->
         <Button Grid.Row="3" Grid.ColumnSpan="2" Content="StatusBar" />
         <!-- ツリーが表示される場所 最低限の幅確保のためMinWidthプロパティを指定 -->
-        <Button Grid.Row="2" Content="Tree" MinWidth="150" />
+        <Button Grid.Row="2" Content="Tree" />
         <!-- エクスプローラーの右側の領域 -->
-        <Button Grid.Row="2" Grid.Column="1" Content="Content" />
+        <!-- TreeとContentのサイズを変えるためのGridSplitterを配置 -->
+        <GridSplitter 
+            Grid.Row="2" Grid.Column="1" 
+            HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="5" />
+        <!-- GridSplitterコントロールを置く余白を確保するためにMarginを設定 -->
+        <Button Grid.Row="2" Grid.Column="1" Content="Content" Margin="5,0,0,0" />
     </Grid>
 </Window>
