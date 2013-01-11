@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-HelloWorld", "01-HelloWorld", "{369585D3-F406-49EB-9894-328DDB188F7C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Basic", "01-Basic", "{369585D3-F406-49EB-9894-328DDB188F7C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{7C17A9C5-E37D-43A4-A109-58E2C0494A80}"
 EndProject
