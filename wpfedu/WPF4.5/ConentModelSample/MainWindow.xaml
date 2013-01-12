@@ -1,0 +1,32 @@
+﻿<Window x:Class="ConentModelSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel Margin="15">
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="button" />
+                <Image Source="btn.png" Stretch="None" />
+                <TextBlock Text="button" />
+            </StackPanel>
+        </Button>
+
+        <Separator Margin="5, 15" />
+
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="文字列を設定" />
+
+        <Separator Margin="5, 15" />
+
+        <Button Name="buttonObject" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Age, StringFormat={}{0}歳}" />
+                        <Image Source="{Binding Picture}" Stretch="None" />
+                    </StackPanel>
+                </DataTemplate>
+            </Button.ContentTemplate>
+        </Button>
+    </StackPanel>
+</Window>
