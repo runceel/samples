@@ -1,0 +1,10 @@
+﻿<Window x:Class="RepeatButtonSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="70" Width="210">
+    <Grid>
+        <RepeatButton Content="0回" Click="Button_Click" 
+                      Delay="1000" 
+                      Interval="2000" />
+    </Grid>
+</Window>
