@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace ListViewSample01
+namespace DataGridSample02
 {
     /// <summary>
     /// App.xaml の相互作用ロジック

@@ -12,7 +12,7 @@
             AlternatingRowBackground="Azure"
             VirtualizingPanel.ScrollUnit="Pixel">
             <DataGrid.Columns>
-                <DataGridTemplateColumn>
+                <DataGridTemplateColumn MinWidth="100">
                     <DataGridTemplateColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -60,8 +60,8 @@
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="年齢" Binding="{Binding Age}" />
-                <DataGridTextColumn Header="住所" Binding="{Binding Address}" />
-                <DataGridTextColumn Header="電話番号" Binding="{Binding Phone}" />
+                <DataGridTextColumn Header="住所" Binding="{Binding Address}" MinWidth="200" />
+                <DataGridTextColumn Header="電話番号" Binding="{Binding Phone}" MinWidth="150" />
             </DataGrid.Columns>
         </DataGrid>
 
