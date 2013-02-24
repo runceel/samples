@@ -30,7 +30,7 @@ namespace DataGridSample02
                     Name = "田中　太郎" + i,
                     Gender = i % 2 == 0 ? Gender.Men : Gender.Women,
                     Age = 20 + i % 50,
-                    AuthMember = i % 5 == 0
+                    AuthMember = i % 5 == 0,
                 }));
             // DataGridに設定する
             this.dataGrid.ItemsSource = data;
