@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>JavaScript &lt;-&gt; 管理ビーン対応</h1>
+        <p:separator />
+        <h:form>
+            <p:dataTable var="p" value="#{javaScriptRCPPage.people}">
+                <p:column headerText="ID">
+                    <h:outputText value="#{p.id}" />
+                </p:column>
+                <p:column headerText="名前">
+                    <h:outputText value="#{p.name}" />
+                </p:column>
+            </p:dataTable>
+            <p:growl autoUpdate="true" />
+
+            <p:panelGrid columns="2">
+                <p:inputText id="id" />
+                <p:inputText id="name" />
+            </p:panelGrid>
+            <p:button value="add" onclick="addPersonButtonClick(); return false;" />
+            <p:remoteCommand name="addPerson" action="#{javaScriptRCPPage.addPersonJS}" update="@form" process="@form" />
+        </h:form>
+        <script type="text/javascript">
+            function addPersonButtonClick() {
+                var textBoxId = '#{p:component("id")}'.replace(":", "\\:");
+                var textBoxName = '#{p:component("name")}'.replace(":", "\\:");
+                addPerson([
+                    { name: "id", value: $("#" + textBoxId).val() },
+                    { name: "name", value: $("#" + textBoxName).val() }
+                ]);
+            }
+        </script>
+    </h:body>
+</html>
+

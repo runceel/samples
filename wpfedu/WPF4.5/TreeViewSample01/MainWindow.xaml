@@ -1,0 +1,27 @@
+﻿<Window x:Class="TreeViewSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TreeView>
+            <TreeViewItem Header="Item1">
+                <TreeViewItem Header="Item1-1">
+                    <TreeViewItem Header="Item1-1-1" />
+                    <TreeViewItem Header="Item1-1-2" />
+                    <TreeViewItem Header="Item1-1-3" />
+                </TreeViewItem>
+                <TreeViewItem Header="Item1-2">
+                    <TreeViewItem Header="Item1-2-1" />
+                    <TreeViewItem Header="Item1-2-2" />
+                </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Item2" IsExpanded="True">
+                <TreeViewItem Header="Item2-1" IsExpanded="True" IsSelected="True">
+                    <TreeViewItem Header="Item2-1-1" />
+                    <TreeViewItem Header="Item2-1-2" />
+                    <TreeViewItem Header="Item2-1-3" />
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>
