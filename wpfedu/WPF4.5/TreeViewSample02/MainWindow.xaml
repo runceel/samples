@@ -1,0 +1,62 @@
+﻿<Window x:Class="TreeViewSample02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TreeView>
+            <TreeViewItem IsExpanded="True">
+                <TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="Olive" Width="15" Height="15" />
+                        <TextBlock Text="矢印アイコン" Margin="5,0" />
+                        <Rectangle Fill="Olive" Width="15" Height="15" />
+                    </StackPanel>
+                </TreeViewItem.Header>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="2.5">
+                                <Ellipse Width="20" Height="20" Stroke="Olive" StrokeThickness="2" />
+                                <TextBlock Text="↑" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Olive" />
+                            </Grid>
+                            <TextBlock Text="上矢印" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="2.5">
+                                <Ellipse Width="20" Height="20" Stroke="Olive" StrokeThickness="2" />
+                                <TextBlock Text="→" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Olive" />
+                            </Grid>
+                            <TextBlock Text="右矢印" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="2.5">
+                                <Ellipse Width="20" Height="20" Stroke="Olive" StrokeThickness="2" />
+                                <TextBlock Text="↓" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Olive" />
+                            </Grid>
+                            <TextBlock Text="下矢印" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="2.5">
+                                <Ellipse Width="20" Height="20" Stroke="Olive" StrokeThickness="2" />
+                                <TextBlock Text="←" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Olive" />
+                            </Grid>
+                            <TextBlock Text="左矢印" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>
