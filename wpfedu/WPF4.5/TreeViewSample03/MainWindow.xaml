@@ -1,0 +1,15 @@
+﻿<Window x:Class="TreeViewSample03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TreeViewSample03"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TreeView Name="treeView">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="local:Person" ItemsSource="{Binding Children}">
+                    <TextBlock Text="{Binding Name}" />
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</Window>
