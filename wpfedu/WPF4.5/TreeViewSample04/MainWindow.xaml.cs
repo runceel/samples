@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,13 @@ namespace TreeViewSample04
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+
         }
     }
 }

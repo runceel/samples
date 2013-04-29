@@ -7,7 +7,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Load" Height="19" VerticalAlignment="Top"/>
+        <Button Content="Load" Height="19" VerticalAlignment="Top" Click="LoadButton_Click"/>
         <TreeView Grid.Row="1"/>
 
     </Grid>
