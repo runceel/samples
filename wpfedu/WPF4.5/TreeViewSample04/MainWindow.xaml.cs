@@ -28,9 +28,11 @@ namespace TreeViewSample04
 
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
-            
-
-
+            this.DataContext = Directory.GetLogicalDrives()
+                .Select(s => new DirectoryNode
+                {
+                    Name = s
+                });
         }
     }
 }

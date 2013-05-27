@@ -1,14 +1,24 @@
 ﻿<Window x:Class="TreeViewSample04.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TreeViewSample04"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <DataTemplate x:Key="{x:Type local:FileNode}">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+        <HierarchicalDataTemplate x:Key="{x:Type local:DirectoryNode}" ItemsSource="{Binding ChildNodes}">
+            <TextBlock Text="{Binding Name}" />
+        </HierarchicalDataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Content="Load" Height="19" VerticalAlignment="Top" Click="LoadButton_Click"/>
-        <TreeView Grid.Row="1"/>
+        <TreeView Grid.Row="1" ItemsSource="{Binding}" ItemTemplate="{StaticResource {x:Type local:DirectoryNode}}">
+        </TreeView>
 
     </Grid>
 </Window>
