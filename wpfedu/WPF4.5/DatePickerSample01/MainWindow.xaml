@@ -1,0 +1,42 @@
+﻿<Window x:Class="DatePickerSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="480" Width="300"
+        Padding="5">
+    <StackPanel>
+        <TextBlock 
+            x:Name="textBlockSelectedDate" 
+            Margin="2.5"
+            Text="ここに選択した日付が表示されます。"/>
+        
+        <Label Content="デフォルトの表示" />
+        <DatePicker 
+            SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+
+        <Label Content="2013/07/15-2013/07/20までが選択範囲" />
+        <DatePicker 
+            DisplayDateStart="2013/07/15" 
+            DisplayDateEnd="2013/07/20"
+            SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+
+        <Label Content="Blackoutによる特定の範囲の日付の選択不可" />
+        <DatePicker 
+            x:Name="datePickerBlackout" 
+            SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+
+        <Label Content="選択日付の書式指定1(Long)" />
+        <DatePicker 
+            SelectedDateFormat="Long" 
+            SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+
+        <Label Content="選択日付の書式指定2(Short)" />
+        <DatePicker 
+            SelectedDateFormat="Short"
+            SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+
+        <Label Content="カレンダーの週初めの変更" />
+        <DatePicker 
+            FirstDayOfWeek="Friday" 
+            SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+    </StackPanel>
+</Window>
