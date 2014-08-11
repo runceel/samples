@@ -1,0 +1,22 @@
+﻿<Window x:Class="ContextMenuSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Background="Red">
+            <Border.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="メニュー１" Click="MenuItem_Click"/>
+                    <MenuItem Header="メニュー２">
+                        <MenuItem Header="メニュー ２－１" />
+                        <MenuItem Header="メニュー ２－２" />
+                        <MenuItem Header="メニュー ２－３" />
+                    </MenuItem>
+                    <MenuItem Header="メニュー３"/>
+                    <MenuItem Header="メニュー４"/>
+                </ContextMenu>
+            </Border.ContextMenu>
+        </Border>
+
+    </Grid>
+</Window>
