@@ -1,0 +1,28 @@
+﻿<Window x:Class="ToolbarSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ToolBarTray>
+            <ToolBar>
+                <Button Content="item1" />
+                <Button Content="item2" />
+                <Button Content="item3" />
+                <Separator />
+                <Button Content="item4" />
+                <CheckBox Content="check" />
+            </ToolBar>
+            <ToolBar>
+                <Button Content="item5" />
+                <Button Content="item6" />
+                <Button Content="item7" />
+                <Separator />
+                <Button Content="item8" />
+            </ToolBar>
+        </ToolBarTray>
+    </Grid>
+</Window>
