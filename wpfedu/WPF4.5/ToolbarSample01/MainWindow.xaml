@@ -14,14 +14,14 @@
                 <Button Content="item3" />
                 <Separator />
                 <Button Content="item4" />
-                <CheckBox Content="check" />
+                <CheckBox Content="item5" />
             </ToolBar>
             <ToolBar>
-                <Button Content="item5" />
                 <Button Content="item6" />
                 <Button Content="item7" />
-                <Separator />
                 <Button Content="item8" />
+                <Separator />
+                <ToggleButton Content="item9" />
             </ToolBar>
         </ToolBarTray>
     </Grid>
