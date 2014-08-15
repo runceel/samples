@@ -41,7 +41,6 @@ namespace TreeViewSample04
                 // TODO : 例外が出たら諦める？
                 var fullPath = this.FullPath;
                 return Directory.GetDirectories(fullPath)
-                    .Where(p => File.GetAccessControl(p).)
                     .Select(p => new DirectoryNode { Name = p, Parent = this })
                     .Cast<ExplorerNode>()
                     .Concat(Directory.GetFiles(fullPath)
