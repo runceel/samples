@@ -1,0 +1,25 @@
+﻿<Window x:Class="RadioButtonSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel Margin="5">
+        <GroupBox Header="Group1">
+            <StackPanel>
+                <RadioButton Content="Button1" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Button2" Checked="RadioButton_Checked" />
+                <RadioButton Content="Button3" Checked="RadioButton_Checked"/>
+                <TextBlock x:Name="textBlockSelected" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Group2">
+            <StackPanel>
+                <RadioButton GroupName="group1" Content="Button1-1" />
+                <RadioButton GroupName="group1" Content="Button1-2" />
+                <RadioButton GroupName="group1" Content="Button1-3" />
+                <RadioButton GroupName="group2" Content="Button2-1" />
+                <RadioButton GroupName="group2" Content="Button2-2" />
+                <RadioButton GroupName="group2" Content="Button2-3" />
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>
