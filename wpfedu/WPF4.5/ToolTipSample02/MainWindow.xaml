@@ -1,0 +1,17 @@
+﻿<Window x:Class="ToolTipSample02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Content="Button">
+            <Button.ToolTip>
+                <ToolTip>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="anthem.jpg" Height="100" />
+                        <TextBlock Text="アンセム" />
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+    </StackPanel>
+</Window>

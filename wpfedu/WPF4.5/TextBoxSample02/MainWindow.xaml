@@ -1,0 +1,12 @@
+﻿<Window x:Class="TextBoxSample02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBox 
+            AcceptsReturn="True"
+            AcceptsTab="True"
+            HorizontalScrollBarVisibility="Visible"
+            VerticalScrollBarVisibility="Visible"/>
+    </Grid>
+</Window>
