@@ -1,0 +1,12 @@
+﻿<Window x:Class="FileDialogSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="FileOpen" Click="FileOpenButton_Click" />
+            <Button Content="FileSave" Click="FileSaveButton_Click" />
+        </StackPanel>
+        <TextBlock x:Name="textBlockFileName" />
+    </StackPanel>
+</Window>
