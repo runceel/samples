@@ -153,5 +153,25 @@ namespace DependencyPropertySample01
             set { SetValue(ChildrenProperty, value); }
         }
 
+        // RegisterReadOnlyメソッドでDependencyPropertyKeyを取得
+        private static readonly DependencyPropertyKey BirthdayPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                "Birthday",
+                typeof(DateTime),
+                typeof(Person),
+                new PropertyMetadata(DateTime.Now));
+        // DependencyPropertyは、DependencyPropertyKeyから取得する
+        public static readonly DependencyProperty BirthdayProperty = BirthdayPropertyKey.DependencyProperty;
+
+        public DateTime Birthday
+        {
+            // getは従来通り
+            get { return (DateTime)GetValue(BirthdayProperty); }
+            // setはDependencyPropertyKeyを使って行う
+            private set { SetValue(BirthdayPropertyKey, value); }
+        }
+
+
+
     }
 }
