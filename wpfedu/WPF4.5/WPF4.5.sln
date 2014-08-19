@@ -173,6 +173,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyPropertySample02"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedPropertySample01", "AttachedPropertySample01\AttachedPropertySample01.csproj", "{A76B00D6-D240-4C25-AA95-538650EECBDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedPropertySample02", "AttachedPropertySample02\AttachedPropertySample02.csproj", "{C71062EC-A54E-4DD5-A4E9-8A477E9ED45B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -459,6 +461,10 @@ Global
 		{A76B00D6-D240-4C25-AA95-538650EECBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A76B00D6-D240-4C25-AA95-538650EECBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A76B00D6-D240-4C25-AA95-538650EECBDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C71062EC-A54E-4DD5-A4E9-8A477E9ED45B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C71062EC-A54E-4DD5-A4E9-8A477E9ED45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C71062EC-A54E-4DD5-A4E9-8A477E9ED45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C71062EC-A54E-4DD5-A4E9-8A477E9ED45B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -534,5 +540,6 @@ Global
 		{995F72A5-D685-4C54-BCF5-96EF37A23413} = {0B1D012D-3954-4B54-8BFC-58EC5FD4EAFF}
 		{711601CF-1427-4808-9D55-62714F0DCE52} = {0B1D012D-3954-4B54-8BFC-58EC5FD4EAFF}
 		{A76B00D6-D240-4C25-AA95-538650EECBDC} = {0B1D012D-3954-4B54-8BFC-58EC5FD4EAFF}
+		{C71062EC-A54E-4DD5-A4E9-8A477E9ED45B} = {0B1D012D-3954-4B54-8BFC-58EC5FD4EAFF}
 	EndGlobalSection
 EndGlobal
