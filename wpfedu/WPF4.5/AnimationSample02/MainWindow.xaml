@@ -1,0 +1,52 @@
+﻿<Window x:Class="AnimationSample02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Storyboard x:Key="rectAnimation">
+            <DoubleAnimationUsingKeyFrames
+                Storyboard.TargetName="rect"
+                Storyboard.TargetProperty="(Canvas.Left)"
+                Duration="0:0:10">
+                <LinearDoubleKeyFrame KeyTime="0:0:2" Value="300" />
+                <LinearDoubleKeyFrame KeyTime="0:0:4" Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:6" Value="200" />
+                <LinearDoubleKeyFrame KeyTime="0:0:8" Value="100" />
+                <LinearDoubleKeyFrame KeyTime="0:0:10" Value="300" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="rectAnimation2">
+            <DoubleAnimationUsingKeyFrames
+                Storyboard.TargetName="rect"
+                Storyboard.TargetProperty="(Canvas.Left)"
+                Duration="0:0:10">
+                <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="0" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:6" Value="200" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:8" Value="100" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:10" Value="300" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Canvas>
+        <Button Canvas.Top="10" Canvas.Left="10" Content="Animation start">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard Storyboard="{StaticResource rectAnimation}" />
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Canvas.Top="10" Canvas.Left="110" Content="Animation start">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard Storyboard="{StaticResource rectAnimation2}" />
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <!-- アニメーションのターゲット -->
+        <Rectangle
+            x:Name="rect"
+            Canvas.Top="50" Canvas.Left="10"
+            Width="50" Height="50" Fill="Red"/>
+    </Canvas>
+</Window>

@@ -1,0 +1,59 @@
+﻿<Window x:Class="AnimationSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Storyboard x:Key="rectAnimation">
+            <DoubleAnimation
+                Storyboard.TargetName="rect"
+                Storyboard.TargetProperty="(Canvas.Left)"
+                To="300" 
+                Duration="0:0:5" />
+        </Storyboard>
+        <Storyboard x:Key="rectAnimationBy">
+            <DoubleAnimation
+                Storyboard.TargetName="rect"
+                Storyboard.TargetProperty="(Canvas.Left)"
+                By="100" 
+                Duration="0:0:5" />
+        </Storyboard>
+        <Storyboard x:Key="rectAnimationRepeat">
+            <DoubleAnimation
+                Storyboard.TargetName="rect"
+                Storyboard.TargetProperty="(Canvas.Left)"
+                To="300" 
+                Duration="0:0:5"
+                RepeatBehavior="0:0:13"
+                AutoReverse="True"/>
+        </Storyboard>
+    </Window.Resources>
+    <Canvas>
+        <Button Canvas.Top="10" Canvas.Left="10" Content="Animation start">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard Storyboard="{StaticResource rectAnimation}" />
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Canvas.Top="10" Canvas.Left="110" Content="Animation start">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard Storyboard="{StaticResource rectAnimationBy}" />
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Canvas.Top="10" Canvas.Left="210" Content="Animation start">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard Storyboard="{StaticResource rectAnimationRepeat}" />
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Canvas.Top="10" Canvas.Left="310" Content="Animation start" Click="Button_Click" />
+        <!-- アニメーションのターゲット -->
+        <Rectangle
+            x:Name="rect"
+            Canvas.Top="50" Canvas.Left="10"
+            Width="50" Height="50" Fill="Red"/>
+    </Canvas>
+</Window>
