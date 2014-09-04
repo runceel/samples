@@ -1,0 +1,27 @@
+﻿<Window x:Class="StyleSample01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <!-- 継承元のスタイル -->
+        <Style x:Key="DefaultTextStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Meiryo UI" />
+            <Setter Property="FontSize" Value="12" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Blue" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <!-- 継承先のスタイル -->
+        <Style x:Key="TitleTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource DefaultTextStyle}">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Foreground" Value="Red" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock Text="タイトル" Style="{StaticResource TitleTextStyle}" />
+        <TextBlock Text="デフォルトのテキスト" Style="{StaticResource DefaultTextStyle}" />
+    </StackPanel>
+</Window>
