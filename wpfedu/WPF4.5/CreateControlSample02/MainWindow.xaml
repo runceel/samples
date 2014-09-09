@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CreateControlSample02" x:Class="CreateControlSample02.MainWindow"
+        Title="MainWindow" Height="169" Width="215">
+    <StackPanel>
+        <!-- 通常の見た目 -->
+        <local:NumericUpDown />
+        <!-- コントロールテンプレートの差し替え -->
+        <local:NumericUpDown>
+            <local:NumericUpDown.Template>
+                <ControlTemplate TargetType="{x:Type local:NumericUpDown}">
+                    <StackPanel>
+                        <RepeatButton x:Name="PART_UpButton" Content="Up" />
+                        <TextBlock Text="{Binding Value, RelativeSource={RelativeSource AncestorType=local:NumericUpDown}}" 
+                                   HorizontalAlignment="Center"/>
+                        <RepeatButton x:Name="PART_DownButton" Content="Down" />
+                    </StackPanel>
+                </ControlTemplate>
+            </local:NumericUpDown.Template>
+        </local:NumericUpDown>
+    </StackPanel>
+</Window>

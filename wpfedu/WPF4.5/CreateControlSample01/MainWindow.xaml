@@ -1,0 +1,10 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CreateControlSample01" x:Class="CreateControlSample01.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <local:NumericUpDown HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <local:NumericUpDown HorizontalAlignment="Left" Margin="92,10,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
