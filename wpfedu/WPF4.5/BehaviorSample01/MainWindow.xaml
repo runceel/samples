@@ -1,0 +1,13 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="BehaviorSample01.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <i:Interaction.Triggers>
+        	<ei:TimerTrigger MillisecondsPerTick="5000">
+        		<ei:LaunchUriOrFileAction Path="http://www.google.com"/>
+        	</ei:TimerTrigger>
+        </i:Interaction.Triggers>
+    </Grid>
+</Window>
