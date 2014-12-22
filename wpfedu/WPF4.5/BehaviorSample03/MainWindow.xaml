@@ -1,0 +1,15 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:local="clr-namespace:BehaviorSample03" 
+    x:Class="BehaviorSample03.MainWindow"
+    Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75">
+            <i:Interaction.Behaviors>
+                <local:AlertBehavior/>
+            </i:Interaction.Behaviors>
+        </Button>
+    </Grid>
+</Window>
