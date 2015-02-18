@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Reactive.Subjects;
 
 namespace LivetWPFSampleApp.Models
 {
@@ -36,16 +37,15 @@ namespace LivetWPFSampleApp.Models
         #endregion
 
 
-        public PeopleMaster(IObservable<object> interaction)
+        public PeopleMaster(ISubject<object> interaction)
         {
             // 置き換えイベントが飛んできたらオンメモリ上の該当データを書き換える
-            interaction.OfType<CollectionChanged<Person>>()
-                .Where(x => x.Action == NotifyCollectionChangedAction.Replace)
+            interaction.OfType<PersonChanged>()
                 .Subscribe(x =>
                 {
-                    var target = this.People.First(y => y.ID == x.Value.ID);
-                    target.Name = x.Value.Name;
-                    target.Age = x.Value.Age;
+                    var target = this.People.First(y => y.ID == x.Person.ID);
+                    target.Name = x.Person.Name;
+                    target.Age = x.Person.Age;
                 });
 
             this.People = new ObservableCollection<Person>();

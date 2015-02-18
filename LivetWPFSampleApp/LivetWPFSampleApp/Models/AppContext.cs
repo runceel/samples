@@ -29,7 +29,7 @@ namespace LivetWPFSampleApp.Models
 
         public AppContext()
         {
-            this.Master = new PeopleMaster(this.interaction.AsObservable());
+            this.Master = new PeopleMaster(this.interaction);
             this.Detail = new PersonDetail(this.interaction);
         }
     }

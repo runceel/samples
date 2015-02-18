@@ -45,8 +45,7 @@ namespace LivetWPFSampleApp.Models
             // リポジトリに書き込む
             this.repository.Update(this.EditTarget);
             // Subjectを通じて変更があったことを外部に通知する
-            this.interaction.OnNext(
-                CollectionChanged<Person>.Replace(-1, this.EditTarget));
+            this.interaction.OnNext(new PersonChanged(this.EditTarget));
         }
 
         /// <summary>
