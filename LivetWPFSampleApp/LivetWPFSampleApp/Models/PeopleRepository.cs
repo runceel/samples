@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivetWPFSampleApp.Models
 {
@@ -11,9 +8,9 @@ namespace LivetWPFSampleApp.Models
         private static readonly List<Person> DataStore = new List<Person>
         {
             new Person { ID = 0, Name = "tanaka1", Age = 30 },
-            new Person { ID = 1, Name = "tanaka2", Age = 30 },
-            new Person { ID = 2, Name = "tanaka3", Age = 30 },
-            new Person { ID = 3, Name = "tanaka4", Age = 30 },
+            new Person { ID = 1, Name = "tanaka2", Age = 31 },
+            new Person { ID = 2, Name = "tanaka3", Age = 32 },
+            new Person { ID = 3, Name = "tanaka4", Age = 50 },
         };
 
         public Person Find(long id)

@@ -1,15 +1,10 @@
-﻿using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
-using Livet;
+﻿using Livet;
 using LivetWPFSampleApp.Models;
-using System;
-using System.Collections.Generic;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivetWPFSampleApp.ViewModels
 {

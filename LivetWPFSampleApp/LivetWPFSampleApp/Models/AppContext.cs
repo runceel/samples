@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Livet;
-using Livet.Messaging;
-using Reactive.Bindings;
-using System.Reactive;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
@@ -14,12 +7,24 @@ namespace LivetWPFSampleApp.Models
 {
     public class AppContext : NotificationObject
     {
+        /// <summary>
+        /// 唯一のModelのインスタンス
+        /// </summary>
         public static readonly AppContext Instance = new AppContext();
 
+        /// <summary>
+        /// Model間で連携するためのパイプ
+        /// </summary>
         private readonly Subject<object> interaction = new Subject<object>();
 
+        /// <summary>
+        /// 閲覧と追加を管理する
+        /// </summary>
         public PeopleMaster Master { get; private set; }
 
+        /// <summary>
+        /// 単一項目の編集担当
+        /// </summary>
         public PersonDetail Detail { get; private set; }
 
         public AppContext()

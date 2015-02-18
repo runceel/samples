@@ -1,14 +1,10 @@
-﻿using Reactive.Bindings;
-using Livet;
-using Livet.Messaging;
+﻿using Livet;
+using Reactive.Bindings;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reactive.Linq;
 using System.Collections.Specialized;
+using System.Linq;
+using System.Reactive.Linq;
 
 namespace LivetWPFSampleApp.Models
 {
@@ -22,6 +18,9 @@ namespace LivetWPFSampleApp.Models
         #region InputPerson変更通知プロパティ
         private Person _InputPerson = new Person();
 
+        /// <summary>
+        /// 追加対象のデータ
+        /// </summary>
         public Person InputPerson
         {
             get
@@ -39,6 +38,7 @@ namespace LivetWPFSampleApp.Models
 
         public PeopleMaster(IObservable<object> interaction)
         {
+            // 置き換えイベントが飛んできたらオンメモリ上の該当データを書き換える
             interaction.OfType<CollectionChanged<Person>>()
                 .Where(x => x.Action == NotifyCollectionChangedAction.Replace)
                 .Subscribe(x =>
@@ -51,6 +51,9 @@ namespace LivetWPFSampleApp.Models
             this.People = new ObservableCollection<Person>();
         }
 
+        /// <summary>
+        /// データをリポジトリから読み込む
+        /// </summary>
         public void Load()
         {
             this.People.Clear();
@@ -61,12 +64,19 @@ namespace LivetWPFSampleApp.Models
             }
         }
 
+        /// <summary>
+        /// 対象のIDのデータを削除する
+        /// </summary>
+        /// <param name="id"></param>
         public void Delete(long id)
         {
             this.repository.Delete(id);
             this.People.Remove(this.People.Single(x => x.ID == id));
         }
 
+        /// <summary>
+        /// データを追加する
+        /// </summary>
         public void AddPerson()
         {
             this.repository.Insert(this.InputPerson);

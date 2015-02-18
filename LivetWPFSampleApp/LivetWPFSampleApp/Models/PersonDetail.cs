@@ -1,11 +1,6 @@
-﻿using Reactive.Bindings;
-using Livet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Livet;
+using Reactive.Bindings;
 using System.Reactive.Subjects;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivetWPFSampleApp.Models
 {
@@ -19,6 +14,9 @@ namespace LivetWPFSampleApp.Models
         #region EditTarget変更通知プロパティ
         private Person _EditTarget;
 
+        /// <summary>
+        /// 編集対象
+        /// </summary>
         public Person EditTarget
         {
             get
@@ -39,13 +37,22 @@ namespace LivetWPFSampleApp.Models
             this.interaction = interaction;
         }
 
+        /// <summary>
+        /// 編集を永続化
+        /// </summary>
         public void Update()
         {
+            // リポジトリに書き込む
             this.repository.Update(this.EditTarget);
+            // Subjectを通じて変更があったことを外部に通知する
             this.interaction.OnNext(
                 CollectionChanged<Person>.Replace(-1, this.EditTarget));
         }
 
+        /// <summary>
+        /// 変更対象を指定する
+        /// </summary>
+        /// <param name="id"></param>
         public void SetEditTarget(long id)
         {
             this.EditTarget = this.repository.Find(id);

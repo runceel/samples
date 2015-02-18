@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
-using System.Reactive.Linq;
-
-using Livet;
-using Livet.Commands;
-using Livet.Messaging;
-using Livet.Messaging.IO;
-using Livet.EventListeners;
+﻿using Livet;
 using Livet.Messaging.Windows;
-
 using LivetWPFSampleApp.Models;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
+using System;
+using System.Reactive.Linq;
 
 namespace LivetWPFSampleApp.ViewModels
 {
