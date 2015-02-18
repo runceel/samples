@@ -11,7 +11,7 @@ using System.Reactive.Linq;
 
 namespace PrismWPFSampleApp.ViewModels
 {
-    public class EditViewModel : IInteractionRequestAware
+    public class EditViewViewModel : IInteractionRequestAware
     {
         // Model
         private readonly AppContext Model = AppContext.Instance;
@@ -24,14 +24,16 @@ namespace PrismWPFSampleApp.ViewModels
 
         public ReactiveCommand CommitCommand { get; private set; }
 
-        public EditViewModel()
+        public EditViewViewModel()
         {
             this.EditTarget = this.Model.Detail
                 .ObserveProperty(x => x.EditTarget)
+                .Where(x => x != null)
                 .Select(x => new PersonViewModel(x))
                 .ToReactiveProperty();
 
             this.CommitCommand = this.EditTarget
+                .Where(x => x != null)
                 .SelectMany(x => x.HasErrors)
                 .Select(x => !x)
                 .ToReactiveCommand();

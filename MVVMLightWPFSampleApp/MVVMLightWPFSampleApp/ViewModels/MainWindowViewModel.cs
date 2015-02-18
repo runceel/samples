@@ -1,17 +1,19 @@
-﻿using PrismWPFSampleApp.Models;
+﻿using GalaSoft.MvvmLight;
+using MVVMLightWPFSampleApp.Commons;
+using MVVMLightWPFSampleApp.Models;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Reactive.Linq;
-using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
+using System.Text;
+using System.Reactive.Threading.Tasks;
+using GalaSoft.MvvmLight.Messaging;
 
-namespace PrismWPFSampleApp.ViewModels
+namespace MVVMLightWPFSampleApp.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : ViewModelBase
     {
         private readonly AppContext Model = AppContext.Instance;
 
@@ -29,17 +31,10 @@ namespace PrismWPFSampleApp.ViewModels
 
         public ReactiveProperty<PersonViewModel> InputPerson { get; private set; }
 
-        public InteractionRequest<Confirmation> ConfirmRequest { get; private set; }
-
-        public InteractionRequest<INotification> EditRequest { get; private set; }
-
         public MainWindowViewModel()
         {
             this.People = this.Model.Master.People
                 .ToReadOnlyReactiveCollection(x => new PersonViewModel(x));
-
-            this.ConfirmRequest = new InteractionRequest<Confirmation>();
-            this.EditRequest = new InteractionRequest<INotification>();
 
             this.SelectedPerson = new ReactiveProperty<PersonViewModel>();
 
@@ -60,12 +55,8 @@ namespace PrismWPFSampleApp.ViewModels
                 .Select(x => x != null)
                 .ToReactiveCommand();
             this.DeleteCommand
-                .SelectMany(_ => this.ConfirmRequest.RaiseAsObservable(new Confirmation
-                    {
-                        Title = "確認",
-                        Content = "削除しますか"
-                    }))
-                .Where(x => x.Confirmed)
+                .SelectMany(_ => DialogService.Default.ShowMessage("削除しますか", "確認", "OK", "Cancel", __ => {}).ToObservable())
+                .Where(x => x)
                 .Select(_ => this.SelectedPerson.Value.Model.ID)
                 .Subscribe(x => this.Model.Master.Delete(x));
 
@@ -76,7 +67,7 @@ namespace PrismWPFSampleApp.ViewModels
                 .Subscribe(_ =>
                 {
                     this.Model.Detail.SetEditTarget(this.SelectedPerson.Value.Model.ID);
-                    this.EditRequest.Raise(new Notification { Title = "編集" });
+                    this.MessengerInstance.Send(new MessageBase(this, "WindowOpen"));
                 });
         }
     }

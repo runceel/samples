@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Practices.Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace PrismWPFSampleApp.Views
     /// <summary>
     /// EditView.xaml の相互作用ロジック
     /// </summary>
-    public partial class EditView : UserControl
+    public partial class EditView : UserControl, IView
     {
         public EditView()
         {

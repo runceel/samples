@@ -1,4 +1,4 @@
-﻿using Microsoft.Practices.Prism.Mvvm;
+﻿using GalaSoft.MvvmLight;
 using Reactive.Bindings;
 using System;
 using System.Collections.ObjectModel;
@@ -7,9 +7,9 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
-namespace PrismWPFSampleApp.Models
+namespace MVVMLightWPFSampleApp.Models
 {
-    public class PeopleMaster : BindableBase
+    public class PeopleMaster : ObservableObject
     {
         private readonly PeopleRepository repository = new PeopleRepository();
 
@@ -20,7 +20,7 @@ namespace PrismWPFSampleApp.Models
         public Person InputPerson
         {
             get { return this.inputPerson; }
-            set { this.SetProperty(ref this.inputPerson, value); }
+            set { this.Set(ref this.inputPerson, value); }
         }
 
         public PeopleMaster(ISubject<object> interaction)

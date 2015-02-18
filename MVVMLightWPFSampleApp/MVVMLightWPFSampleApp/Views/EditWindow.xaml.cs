@@ -1,5 +1,4 @@
-﻿using Microsoft.Practices.Prism.Mvvm;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PrismWPFSampleApp.Views
+namespace MVVMLightWPFSampleApp.Views
 {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// EditWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window, IView
+    public partial class EditWindow : Window
     {
-        public MainWindow()
+        public EditWindow()
         {
             InitializeComponent();
         }
