@@ -10,20 +10,31 @@ namespace LivetWPFSampleApp.ViewModels
 {
     public class EditWindowViewModel : ViewModel
     {
+        /// <summary>
+        /// Modelのインスタンス
+        /// </summary>
         private readonly AppContext Model = AppContext.Instance;
 
+        /// <summary>
+        /// 編集対象
+        /// </summary>
         public ReactiveProperty<PersonViewModel> EditTarget { get; private set; }
 
+        /// <summary>
+        /// 編集コマンド
+        /// </summary>
         public ReactiveCommand EditCommand { get; private set; }
 
         public EditWindowViewModel()
         {
+            // EditTargetをVMに変換してReactiveProperty化
             this.EditTarget = this.Model.Detail
                 .ObserveProperty(x => x.EditTarget)
                 .Select(x => new PersonViewModel(x))
                 .ToReactiveProperty()
                 .AddTo(this.CompositeDisposable);
 
+            // EditTargetにエラーがないときだけ押せる
             this.EditCommand = this.EditTarget
                 .SelectMany(x => x.HasErrors)
                 .Select(x => !x)
@@ -32,6 +43,7 @@ namespace LivetWPFSampleApp.ViewModels
             this.EditCommand
                 .Subscribe(_ =>
                     {
+                        // 更新して外部へ変更通知
                         this.Model.Detail.Update();
                         this.Messenger.Raise(new WindowActionMessage(WindowAction.Close, "WindowClose"));
                     })

@@ -110,6 +110,7 @@
     <Compile Include="Models\PeopleMaster.cs" />
     <Compile Include="Models\PeopleRepository.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonChanged.cs" />
     <Compile Include="Models\PersonDetail.cs" />
     <Compile Include="ViewModels\EditWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
