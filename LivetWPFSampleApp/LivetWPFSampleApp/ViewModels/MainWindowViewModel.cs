@@ -15,8 +15,8 @@ using Livet.EventListeners;
 using Livet.Messaging.Windows;
 
 using LivetWPFSampleApp.Models;
-using Codeplex.Reactive;
-using Codeplex.Reactive.Extensions;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
 using System.Windows;
 
 namespace LivetWPFSampleApp.ViewModels
@@ -48,21 +48,25 @@ namespace LivetWPFSampleApp.ViewModels
             this.InputPerson = this.Model.Master
                 .ObserveProperty(x => x.InputPerson)
                 .Select(x => new PersonViewModel(x))
-                .ToReactiveProperty();
+                .ToReactiveProperty()
+                .AddTo(this.CompositeDisposable);
 
             this.AddCommand = this.InputPerson
                 .Where(x => x != null)
                 .SelectMany(x => x.HasErrors)
                 .Select(x => !x)
-                .ToReactiveCommand(false);
+                .ToReactiveCommand(false)
+                .AddTo(this.CompositeDisposable);
             this.AddCommand.Subscribe(_ =>
                 {
                     this.Model.Master.AddPerson();
-                });
+                })
+                .AddTo(this.CompositeDisposable);
 
             this.DeleteCommand = this.SelectedPerson
                 .Select(x => x != null)
-                .ToReactiveCommand();
+                .ToReactiveCommand()
+                .AddTo(this.CompositeDisposable);
             this.DeleteCommand
                 .Select(_ => new ConfirmationMessage("削除してもいいですか", "確認", MessageBoxImage.Information, MessageBoxButton.OKCancel, "DeleteConfirm"))
                 .SelectMany(m => this.Messenger.RaiseAsync(m).ToObservable().Select(_ => m))
@@ -71,17 +75,20 @@ namespace LivetWPFSampleApp.ViewModels
                 .Subscribe(x =>
                 {
                     this.Model.Master.Delete(x);
-                });
+                })
+                .AddTo(this.CompositeDisposable);
 
             this.EditCommand = this.SelectedPerson
                 .Select(x => x != null)
-                .ToReactiveCommand();
+                .ToReactiveCommand()
+                .AddTo(this.CompositeDisposable);
             this.EditCommand
                 .Subscribe(_ =>
                 {
                     this.Model.Detail.SetEditTarget(this.SelectedPerson.Value.Model.ID);
                     this.Messenger.Raise(new TransitionMessage("EditWindowOpen"));
-                });
+                })
+                .AddTo(this.CompositeDisposable);
         }
 
         public void Initialize()

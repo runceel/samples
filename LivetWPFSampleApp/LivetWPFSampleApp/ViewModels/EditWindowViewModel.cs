@@ -13,8 +13,8 @@ using Livet.EventListeners;
 using Livet.Messaging.Windows;
 
 using LivetWPFSampleApp.Models;
-using Codeplex.Reactive;
-using Codeplex.Reactive.Extensions;
+using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
 
 namespace LivetWPFSampleApp.ViewModels
 {
@@ -37,13 +37,15 @@ namespace LivetWPFSampleApp.ViewModels
             this.EditCommand = this.EditTarget
                 .SelectMany(x => x.HasErrors)
                 .Select(x => !x)
-                .ToReactiveCommand();
+                .ToReactiveCommand()
+                .AddTo(this.CompositeDisposable);
             this.EditCommand
                 .Subscribe(_ =>
                     {
                         this.Model.Detail.Update();
                         this.Messenger.Raise(new WindowActionMessage(WindowAction.Close, "WindowClose"));
-                    });
+                    })
+                .AddTo(this.CompositeDisposable);
         }
 
         public void Initialize()

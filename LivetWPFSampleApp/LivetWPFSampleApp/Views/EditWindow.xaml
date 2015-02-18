@@ -6,7 +6,11 @@
         xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
         xmlns:v="clr-namespace:LivetWPFSampleApp.Views"
         xmlns:vm="clr-namespace:LivetWPFSampleApp.ViewModels"
-        Title="EditWindow" Height="163.158" Width="327.632" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+        Title="EditWindow" 
+        Height="163.158" 
+        Width="327.632" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterOwner">
 
     <Window.DataContext>
         <vm:EditWindowViewModel/>
@@ -35,9 +39,9 @@
     </i:Interaction.Triggers>
     <StackPanel>
         <Label Content="名前"/>
-        <TextBox Height="23" TextWrapping="Wrap" Text="{Binding EditTarget.Value.Name.Value, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Height="23" TextWrapping="Wrap" Text="{Binding EditTarget.Value.Name.Value, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource Self}}" />
         <Label Content="年齢"/>
-        <TextBox Height="23" TextWrapping="Wrap" Text="{Binding EditTarget.Value.Age.Value, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Height="23" TextWrapping="Wrap" Text="{Binding EditTarget.Value.Age.Value, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource Self}}" />
         <Button Content="更新" Command="{Binding EditCommand, Mode=OneWay}"/>
     </StackPanel>
 </Window>

@@ -29,3 +29,4 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 #ignore netbeans
 [Tt]arget/
+packages/

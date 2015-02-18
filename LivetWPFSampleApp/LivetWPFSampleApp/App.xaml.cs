@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows;
 
 using Livet;
-using Codeplex.Reactive;
+using Reactive.Bindings;
 
 namespace LivetWPFSampleApp
 {

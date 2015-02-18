@@ -5,7 +5,7 @@ using System.Text;
 
 using Livet;
 using Livet.Messaging;
-using Codeplex.Reactive;
+using Reactive.Bindings;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
