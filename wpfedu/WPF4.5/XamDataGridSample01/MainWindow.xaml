@@ -1,0 +1,22 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:igDP="http://infragistics.com/DataPresenter" 
+    xmlns:local="clr-namespace:XamDataGridSample01"
+    x:Class="XamDataGridSample01.MainWindow"
+    Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <igDP:XamDataGrid DataSource="{Binding People}">
+            <igDP:XamDataGrid.FieldLayouts>
+                <igDP:FieldLayout>
+                    <igDP:Field Label="名前" Name="Name"/>
+                    <igDP:CurrencyField Label="給料" Name="Salary" />
+                    <igDP:Field Label="誕生日" Name="Birthday"/>
+                </igDP:FieldLayout>
+            </igDP:XamDataGrid.FieldLayouts>
+        </igDP:XamDataGrid>
+    </Grid>
+</Window>
