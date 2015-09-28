@@ -105,7 +105,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\EditViewModel.cs" />
+    <Compile Include="ViewModels\EditViewViewModel.cs" />
     <Compile Include="ViewModels\InteractionRequestExtensions.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\PersonViewModel.cs" />

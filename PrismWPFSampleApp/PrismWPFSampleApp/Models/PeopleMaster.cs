@@ -15,7 +15,7 @@ namespace PrismWPFSampleApp.Models
 
         public ObservableCollection<Person> People { get; private set; }
 
-        private Person inputPerson;
+        private Person inputPerson = new Person();
 
         public Person InputPerson
         {

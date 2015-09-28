@@ -7,7 +7,6 @@
         xmlns:v="clr-namespace:LivetWPFSampleApp.Views"
         xmlns:vm="clr-namespace:LivetWPFSampleApp.ViewModels"
         Title="MainWindow" Height="350" Width="525">
-
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
@@ -52,15 +51,37 @@
             </DataGrid.Columns>
         </DataGrid>
         <Menu>
-            <MenuItem Header="Edit" Command="{Binding EditCommand, Mode=OneWay}"/>
-            <MenuItem Header="Delete" Command="{Binding DeleteCommand}" />
+            <MenuItem Header="Edit" IsEnabled="{Binding EditEnabled.Value}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <l:LivetCallMethodAction MethodTarget="{Binding Mode=OneWay}" MethodName="Edit"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </MenuItem>
+            <MenuItem Header="Delete" IsEnabled="{Binding DeleteEnabled.Value}" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <l:ConfirmationDialogInteractionMessageAction>
+                            <l:DirectInteractionMessage CallbackMethodTarget="{Binding Mode=OneWay}" CallbackMethodName="Delete">
+                                <l:ConfirmationMessage Button="OKCancel" Caption="確認" Text="削除してもいいですか" />
+                            </l:DirectInteractionMessage>
+                        </l:ConfirmationDialogInteractionMessageAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </MenuItem>
         </Menu>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Label Content="名前："/>
             <TextBox TextWrapping="Wrap" Text="{Binding InputPerson.Value.Name.Value, UpdateSourceTrigger=PropertyChanged}" Width="120"/>
             <Label Content="年齢："/>
             <TextBox TextWrapping="Wrap" Text="{Binding InputPerson.Value.Age.Value, UpdateSourceTrigger=PropertyChanged}" Width="120"/>
-            <Button Content="追加" Width="75" Command="{Binding AddCommand, Mode=OneWay}"/>
+            <Button Content="追加" Width="75" IsEnabled="{Binding AddEnabled.Value}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <l:LivetCallMethodAction MethodName="Add" MethodTarget="{Binding Mode=OneWay}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
         </StackPanel>
 
     </Grid>

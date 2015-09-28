@@ -25,6 +25,10 @@ namespace PrismWPFSampleApp.ViewModels
 
         public ReactiveCommand EditCommand { get; private set; }
 
+        public ReactiveCommand AddCommand { get; private set; }
+
+        public ReactiveProperty<PersonViewModel> InputPerson { get; private set; }
+
         public InteractionRequest<Confirmation> ConfirmRequest { get; private set; }
 
         public InteractionRequest<INotification> EditRequest { get; private set; }
@@ -38,6 +42,16 @@ namespace PrismWPFSampleApp.ViewModels
             this.EditRequest = new InteractionRequest<INotification>();
 
             this.SelectedPerson = new ReactiveProperty<PersonViewModel>();
+
+            this.InputPerson = this.Model.Master.ObserveProperty(x => x.InputPerson)
+                .Select(x => new PersonViewModel(x))
+                .ToReactiveProperty();
+
+            this.AddCommand = this.InputPerson
+                .SelectMany(x => x.HasErrors)
+                .Select(x => !x)
+                .ToReactiveCommand();
+            this.AddCommand.Subscribe(_ => this.Model.Master.AddPerson());
 
             this.LoadCommand = new ReactiveCommand();
             this.LoadCommand.Subscribe(_ => this.Model.Master.Load());

@@ -102,16 +102,17 @@
     </None>
     <None Include="Properties\app.manifest" />
     <AppDesigner Include="Properties\" />
+    <None Include="XBAPHelloWorld_1_TemporaryKey.pfx" />
     <None Include="XBAPHelloWorld_TemporaryKey.pfx" />
   </ItemGroup>
   <PropertyGroup>
     <StartArguments />
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>XBAPHelloWorld_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>XBAPHelloWorld_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>224D27E6D1ABC38E255D2AAE271BA181674FB5AC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2D5E7F0D6A8435CDF9F31EDF5DCAFF455B4E16CC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

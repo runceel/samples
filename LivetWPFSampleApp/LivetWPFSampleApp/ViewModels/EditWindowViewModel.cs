@@ -21,9 +21,9 @@ namespace LivetWPFSampleApp.ViewModels
         public ReactiveProperty<PersonViewModel> EditTarget { get; private set; }
 
         /// <summary>
-        /// 編集コマンド
+        /// 更新
         /// </summary>
-        public ReactiveCommand EditCommand { get; private set; }
+        public ReactiveProperty<bool> UpdateEnabled { get; private set; }
 
         public EditWindowViewModel()
         {
@@ -35,23 +35,22 @@ namespace LivetWPFSampleApp.ViewModels
                 .AddTo(this.CompositeDisposable);
 
             // EditTargetにエラーがないときだけ押せる
-            this.EditCommand = this.EditTarget
+            this.UpdateEnabled = this.EditTarget
                 .SelectMany(x => x.HasErrors)
                 .Select(x => !x)
-                .ToReactiveCommand()
-                .AddTo(this.CompositeDisposable);
-            this.EditCommand
-                .Subscribe(_ =>
-                    {
-                        // 更新して外部へ変更通知
-                        this.Model.Detail.Update();
-                        this.Messenger.Raise(new WindowActionMessage(WindowAction.Close, "WindowClose"));
-                    })
+                .ToReactiveProperty()
                 .AddTo(this.CompositeDisposable);
         }
 
         public void Initialize()
         {
+        }
+
+        public void Update()
+        {
+            // 更新して外部へ変更通知
+            this.Model.Detail.Update();
+            this.Messenger.Raise(new WindowActionMessage(WindowAction.Close, "WindowClose"));
         }
     }
 }

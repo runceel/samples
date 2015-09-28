@@ -1,0 +1,53 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TwitterAppSample.Views.Fragments"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModels="using:TwitterAppSample.ViewModels" x:Name="userControl"
+    x:Class="TwitterAppSample.Views.Fragments.StatusMessageFragment"
+    mc:Ignorable="d"
+    d:DesignHeight="146"
+    d:DesignWidth="380"
+    Loaded="UserControl_Loaded" d:DataContext="{d:DesignInstance ViewModels:StatusMessageViewModel, IsDesignTimeCreatable=True}">
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="50"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"/>
+			<RowDefinition/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="VisualStateGroup">
+				<VisualState x:Name="NoSelected"/>
+				<VisualState x:Name="Selected">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="stackPanel">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Image Source="{Binding ProfileImage.Value}"/>
+		<Grid Grid.Column="1" Grid.RowSpan="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<TextBlock TextWrapping="Wrap" Text="{Binding ScreenName.Value}" Style="{StaticResource BodyTextBlockStyle}"/>
+			<TextBlock Grid.Row="1" TextWrapping="Wrap" Text="{Binding Text.Value}" Style="{StaticResource BodyTextBlockStyle}"/>
+		</Grid>
+		<StackPanel x:Name="stackPanel" Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" Visibility="Collapsed">
+			<Button Content="RT" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding PageDataContext.RetweetCommand, ElementName=userControl, Mode=OneWay}" />
+		</StackPanel>
+	</Grid>
+</UserControl>

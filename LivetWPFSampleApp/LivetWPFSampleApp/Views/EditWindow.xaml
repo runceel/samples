@@ -42,6 +42,12 @@
         <TextBox Height="23" TextWrapping="Wrap" Text="{Binding EditTarget.Value.Name.Value, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource Self}}" />
         <Label Content="年齢"/>
         <TextBox Height="23" TextWrapping="Wrap" Text="{Binding EditTarget.Value.Age.Value, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource Self}}" />
-        <Button Content="更新" Command="{Binding EditCommand, Mode=OneWay}"/>
+        <Button Content="更新" IsEnabled="{Binding UpdateEnabled.Value}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <l:LivetCallMethodAction MethodTarget="{Binding}" MethodName="Update" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
     </StackPanel>
 </Window>
